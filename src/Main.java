@@ -14,6 +14,7 @@ import java.time.LocalDateTime;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 public class Main {
 
@@ -193,18 +194,11 @@ public class Main {
                             new Gamer("Timmi",timmiScore),
                             new Gamer("Lasi",lasiScore)
                     );
-           /* System.out.println(result
-                    .stream()
-                    .sorted(Comparator.comparing(Gamer::getScore))
-                            .peek(System.out::println)
-                            .toString()
-
-            );*/
 
             //Till huvudmeny
             System.out.println("Du har spelat med alla spelare. Gör ditt val. " +
                     "\n1. Spela igen \n2. Visa turneringsstatistik \n3. Avsluta");
-            int menuChoice = 0;
+            int menuChoice;
             menuChoice = scanner.nextInt();
 
             if (menuChoice == 1) {
@@ -212,9 +206,18 @@ public class Main {
             }
             else if (menuChoice == 2) {
                 System.out.println("Turnering är avslutat "+ localTime+"\nSlutresultatet är "+result);
-                System.out.println("Snittplacering: ");
-                System.out.println("Bästa placering: ");
-                System.out.println("Sämsta placering: ");
+                System.out.println("Snittresultat: "+result
+                        .stream()
+                        .collect(Collectors.averagingDouble(Gamer::getScore))
+                );
+                System.out.println("Bästa placering: "+result
+                        .stream()
+                        .max(Comparator.comparing(Gamer::getScore))
+                );
+                System.out.println("Sämsta placering: "+result
+                        .stream()
+                        .min(Comparator.comparing(Gamer::getScore))
+                );
                 break;
             }
             else if (menuChoice == 3) {
