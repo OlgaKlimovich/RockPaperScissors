@@ -42,7 +42,7 @@ public class Main {
             if (gamerChoice == 1) {
                 System.out.println("Du valde sten.");
                 if (slumpiChoice == 1) {
-                    System.out.println("Slumpi valde sten. Tie");
+                    System.out.println("Slumpi valde sten. Jämnt spel.");
                 } else if (slumpiChoice == 2) {
                     System.out.println("Slumpi valde sax. Du vann.");
                     gamerScore++;
@@ -53,7 +53,7 @@ public class Main {
             } else if (gamerChoice == 2) {
                 System.out.println("Du valde sax.");
                 if (slumpiChoice == 2) {
-                    System.out.println("Slumpi valde sax. Tie");
+                    System.out.println("Slumpi valde sax. Jämnt spel.");
                 } else if (slumpiChoice == 1) {
                     System.out.println("Slumpi valde sten. Slumpi vann.");
                     slumpiScore++;
@@ -64,7 +64,7 @@ public class Main {
             } else if (gamerChoice == 3) {
                 System.out.println("Du valde påse.");
                 if (slumpiChoice == 3) {
-                    System.out.println("Slumpi valde påse. Tie");
+                    System.out.println("Slumpi valde påse. Jämnt spel.");
                 } else if (slumpiChoice == 1) {
                     System.out.println("Slumpi valde sten. Du vann.");
                     gamerScore++;
@@ -84,7 +84,7 @@ public class Main {
                 timmiChoice = 1;
             } else if (localTime.getMinute() >= 20 && localTime.getMinute() < 40) {
                 timmiChoice = 2;
-            } else if (localTime.getMinute() >= 40 && localTime.getMinute() < 60) {
+            } else if (localTime.getMinute() >= 40) {
                 timmiChoice = 3;
             }
 
@@ -93,7 +93,7 @@ public class Main {
             if (gamerChoice == 1) {
                 System.out.println("Du valde sten.");
                 if (timmiChoice == 1) {
-                    System.out.println("Timmi valde sten. Tie");
+                    System.out.println("Timmi valde sten. Jämnt spel.");
                 } else if (timmiChoice == 2) {
                     System.out.println("Timmi valde sax. Du vann.");
                     gamerScore++;
@@ -104,7 +104,7 @@ public class Main {
             } else if (gamerChoice == 2) {
                 System.out.println("Du valde sax.");
                 if (timmiChoice == 2) {
-                    System.out.println("Timmi valde sax. Tie");
+                    System.out.println("Timmi valde sax. Jämnt spel.");
                 } else if (timmiChoice == 1) {
                     System.out.println("Timmi valde sten. Timmi vann.");
                     timmiScore++;
@@ -115,7 +115,7 @@ public class Main {
             } else if (gamerChoice == 3) {
                 System.out.println("Du valde påse.");
                 if (timmiChoice == 3) {
-                    System.out.println("Timmi valde påse. Tie");
+                    System.out.println("Timmi valde påse. Jämnt spel.");
                 } else if (timmiChoice == 1) {
                     System.out.println("Timmi valde sten. Du vann.");
                     gamerScore++;
@@ -150,7 +150,7 @@ public class Main {
             if (gamerChoice == 1) {
                 System.out.println("Du valde sten.");
                 if (lasiChoice == 1) {
-                    System.out.println("Lasi valde sten. Tie");
+                    System.out.println("Lasi valde sten. Jämnt spel.");
                 } else if (lasiChoice == 2) {
                     System.out.println("Lasi valde sax. Du vann.");
                     gamerScore++;
@@ -161,7 +161,7 @@ public class Main {
             } else if (gamerChoice == 2) {
                 System.out.println("Du valde sax.");
                 if (lasiChoice == 2) {
-                    System.out.println("Lasi valde sax. Tie");
+                    System.out.println("Lasi valde sax. Jämnt spel.");
                 } else if (lasiChoice == 1) {
                     System.out.println("Lasi valde sten. Lasi vann.");
                     lasiScore++;
@@ -172,7 +172,7 @@ public class Main {
             } else if (gamerChoice == 3) {
                 System.out.println("Du valde påse.");
                 if (lasiChoice == 3) {
-                    System.out.println("Lasi valde påse. Tie");
+                    System.out.println("Lasi valde påse. Jämnt spel.");
                 } else if (lasiChoice == 1) {
                     System.out.println("Lasi valde sten. Du vann.");
                     gamerScore++;
@@ -198,8 +198,7 @@ public class Main {
             //Till huvudmeny
             System.out.println("Du har spelat med alla spelare. Gör ditt val. " +
                     "\n1. Spela igen \n2. Visa turneringsstatistik \n3. Avsluta");
-            int menuChoice;
-            menuChoice = scanner.nextInt();
+            int menuChoice= scanner.nextInt();
 
             if (menuChoice == 1) {
                 System.out.println("Ny spel");
